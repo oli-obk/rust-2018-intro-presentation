@@ -1,6 +1,4 @@
 ---
-@title[Rust 2018 Edition]
-
 # Rust 2018 Edition
 
 * What is it?
@@ -9,8 +7,7 @@
 * How is that even possible?
 
 ---
-@title[What is it?]
+### What is it?
 
-# Foomp
-
-boomp
+---
+### What is it *not*?
