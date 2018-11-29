@@ -56,4 +56,3 @@ No. You can
 ### What is this sorcery!?
 
 ![sorcery.png](sorcery.png)
-
