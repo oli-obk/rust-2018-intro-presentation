@@ -55,5 +55,5 @@ No. You can
 ---
 ### What is this sorcery!?
 
-![sorcery.svg](https://raw.githubusercontent.com/oli-obk/rust-2018-intro-presentation/master/sorcery.svg?sanitize=true)
+![sorcery.png](sorcery.png)
 
