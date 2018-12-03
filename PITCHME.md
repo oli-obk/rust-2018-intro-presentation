@@ -7,7 +7,7 @@
 * How is that even possible?
 
 ---
-### What is it?
+## What is it?
 
 ---
 ### What is it **not**?
@@ -18,7 +18,6 @@
 ---
 ### Ok, back to "what is it?"
 
-* Stability without stagnation
 * Language cleanups
 * Convenience features
 * An *opt-in* breaking change
@@ -56,3 +55,90 @@ No. You can
 ### What is this sorcery!?
 
 ![sorcery.png](sorcery.png)
+
+---
+## Why is this happening?
+
+---
+### Stability without stagnation
+
+Suboptimal language features
+
+* Upfront planning could not reveal them
+    * needed actual long term use
+* Deadlines meant compromises
+* Library and language development obsoleted other features
+
+---
+## When does the fun start?
+
+* 07.12.18 (This friday!) on stable
+* on beta already right now
+
+---
+## Features? Features!
+
+* no more `extern crate`
+* `pub(crate)`
+* `fn main() -> Result<(), MyError>`
+* non lexical lifetimes
+* keyword reservations (`async`, `await`)
+* stable embedded development
+* stable clippy
+
+---
+
+```rust
+use std::ops::Index; // 2015 special case
+use rand::range; // 2018 without `extern crate rand`
+```
+
+---
+
+```rust
+// in mycrate's `lib.rs`
+pub mod foo {
+    pub(crate) fn bar() {}
+}
+```
+
+Other crates cannot call `mycrate::foo::bar()`
+
+---
+
+```rust
+use std::io::Error;
+fn main() -> Result<(), Error> {
+    let file = File::open("foo")?;
+    // ...
+}
+```
+
+Reports the error on the command line and sets the exit code if not `Ok`
+
+---
+### non lexical lifetimes
+
+The killer feature of the 2018 edition:
+
+write code as you mean it and not as the borrow checker
+understands it
+
+---
+
+the borrow checker has been rewritten on
+
+a control flow representation (the MIR)
+
+instead of
+
+a syntax tree (the HIR)
+
+---
+
+```rust
+let mut x = 42;
+let y = &x;
+x = 5; // ok
+let z = y; // error
+```
