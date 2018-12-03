@@ -74,6 +74,7 @@ Suboptimal language features
 
 * 07.12.18 (This friday!) on stable
 * on beta already right now
+* Technically in the next few hours
 
 ---
 ## Features? Features!
@@ -142,3 +143,35 @@ let y = &x;
 x = 5; // ok
 let z = y; // error
 ```
+
+---
+
+Reservation of
+
+* `async`
+* `await`
+
+for future use
+
+---
+
+```
+rustup target add armv7r-none-eabi
+```
+
+---
+
+```
+rustup component add clippy
+```
+
+---
+
+## Beyond Features
+
+---
+
+Empowering *everyone* to become a systems programmer
+
+---
+
